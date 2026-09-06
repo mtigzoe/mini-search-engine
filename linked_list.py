@@ -34,8 +34,9 @@ class LinkedList:
         return self.curr is not None
 
     def insert(self, key: str) -> None:
-        """Insert key in sorted order. Key must not already be in the list."""
-        assert not self.find(key)
+        """Insert key in sorted order if not already present."""
+        if self.find(key):
+            return
 
         node = Item(data=key)
 
