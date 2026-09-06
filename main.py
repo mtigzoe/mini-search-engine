@@ -42,8 +42,6 @@ def count_items(path: str) -> Tuple[int, int, int]:
 
     return page_count, url_count, word_count
 
-# I’ll implement PageRank from the assignment stub: iterate the loaded pages, apply the 50-iteration weight update, and surface those scores in search results.
-#I’ll add PageRank on the page table (50 iterations, 10%/90% split), resolve only in-corpus links, and print integer scores next to search hits.
 def google_rank(webpage_hash: Webpage) -> None:
     webpage_hash.compute_page_rank()
 
