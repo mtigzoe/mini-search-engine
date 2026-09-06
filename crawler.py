@@ -10,7 +10,7 @@ same format main.py expects:
 
 Usage:
     python crawler.py https://www.[university name].edu
-    python crawler.py https://www.clemson.edu --max-pages 100 --delay 1.0
+    python crawler.py https://www.[university name].edu --max-pages 100 --delay 1.0
     python crawler.py https://apple.com --output webpages.txt --domain apple.com
 
 Only the standard library is used (urllib, html.parser), so no pip
@@ -170,7 +170,7 @@ def write_webpages_file(pages: dict, output_path: str) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description="Crawl a site into webpages.txt format for the hw1 search engine.")
-    ap.add_argument("seed_url", help="Starting URL, e.g. https://www.clemson.edu")
+    ap.add_argument("seed_url", help="Starting URL, e.g. https://www.[university name].edu")
     ap.add_argument("--max-pages", type=int, default=50, help="Max pages to crawl (default: 50)")
     ap.add_argument("--delay", type=float, default=0.5, help="Seconds to wait between requests (default: 0.5)")
     ap.add_argument("--timeout", type=float, default=10.0, help="Per-request timeout in seconds (default: 10)")
